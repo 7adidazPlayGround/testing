@@ -3,8 +3,6 @@ var dexter = require('morgan');
 const app = express();
 const cors = require('cors');
 
-
-
 let notes = [
   {
     id: 1,
@@ -24,6 +22,7 @@ let notes = [
 ]
 
 
+app.use(express.json());
 app.use(dexter('tiny'));
 app.use(cors());
 app.use(express.static('build'));
